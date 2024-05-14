@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação hihi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            color: #ff6666;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .data {
+            font-weight: bold;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff6666;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #ff4d4d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>então nosso encontro vai ser </h2>
+        <p>Data: <span id="data"></span></p>
+        <p>Hora: <span id="hora"></span></p>
+        <p> <span id="entretenimento"></span></p>
+        <p> <span id="comentario"></span></p>
+
+        <h2>agora tire um print e mande no meu zap 🫰</h2>
+        <h5>(aguardo sua resposta > < )</h5>
+    </div>
+
+    <script>
+       
+        document.getElementById('data').textContent = localStorage.getItem('data');
+        document.getElementById('hora').textContent = localStorage.getItem('hora');
+        document.getElementById('entretenimento').textContent = localStorage.getItem('entretenimento');
+        document.getElementById('comentario').textContent = localStorage.getItem('comentario');
+
+        
+        localStorage.clear();
+    </script>
+</body>
+</html>
