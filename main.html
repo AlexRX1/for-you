@@ -153,6 +153,30 @@
     margin-top: 20px;
 }
 
+#photo-library .row > div {
+    padding: 5px;
+}
+
+#photo-library img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    #photo-library .col-md-3 {
+        flex: 0 0 33.3333%;
+        max-width: 33.3333%; /* Exibe três fotos por linha */
+    }
+}
+
+@media (max-width: 576px) {
+    #photo-library .col-md-3 {
+        flex: 0 0 50%;
+        max-width: 50%; /* Exibe duas fotos por linha em telas menores */
+    }
+}
 
 .counter {
     max-width: 400px;
@@ -192,7 +216,7 @@
                     <img src="img/boi.png" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-block">
                         <h5>19/10/24</h5>
-                        <p>Nossa primeiro boi.</p>
+                        <p>Nosso primeiro boi.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -293,6 +317,12 @@
             </div>
             <div class="col-md-3">
                 <img src="img/1.jpg" class="img-fluid" onclick="openModal(this.src)" alt="Café">
+            </div>
+            <div class="col-md-3">
+                <img src="img/55.jpg" class="img-fluid" onclick="openModal(this.src)" alt="Café">
+            </div>
+            <div class="col-md-3">
+                <img src="img/555.jpg" class="img-fluid" onclick="openModal(this.src)" alt="Café">
             </div>
         </div>
         <button class="btn btn-secondary mt-3" onclick="closePhotoLibrary()">Fechar</button>
