@@ -125,21 +125,7 @@
     align-items: center;
     min-height: 80vh; /* Ajuste conforme necessário */
 }
-.text-p {
-    max-width: 600px;
-    margin: 20px auto; 
-    text-align: center;
-    font-family: 'Great Vibes', cursive, sans-serif;
-    font-size: 1.7rem;
-    line-height: 1.8;
-    color: #fdfdfd; 
-    background-color: rgba(255, 255, 255, 0.1); 
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-    border: 2px solid #3700fd; 
-    backdrop-filter: blur(2px); 
-}
+
 
 .h2-text{
     font-family: 'Lobster', cursive;
@@ -164,17 +150,91 @@
     cursor: pointer;
 }
 
+.mt-3 {
+    display: flex;
+            justify-content: center;
+            align-items: center;
+    margin-top: 1rem !important;
+    margin-bottom: 1rem ;
+}
+
+.text-p {
+    max-width: 90%; 
+    margin: 20px auto;
+    text-align: justify;
+    font-family: 'Great Vibes', cursive, sans-serif;
+    font-size: 1.9rem; 
+    line-height: 1.8;
+    color: #fdfdfd;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 40px; 
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid #3700fd;
+    backdrop-filter: blur(2px);
+}
+
+.music-library {
+            display: none;
+            margin-top: 1rem;
+        }
+
+        .music-library .row > div {
+            padding: 5px;
+        }
+
+        .music-library img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .music-player {
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .music-library .col-md-3 {
+                flex: 0 0 33.3333%;
+                max-width: 33.3333%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .music-library .col-md-3 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+
+@media (max-width: 768px) {
+    .text-p {
+        padding: 30px;
+        font-size: 1.7rem; 
+        max-width: 95%; 
+    }
+}
+
+@media (max-width: 576px) {
+    .text-p {
+        padding: 25px;
+        font-size: 1.5rem; 
+        max-width: 95%; 
+    }
+}
+
 @media (max-width: 768px) {
     #photo-library .col-md-3 {
         flex: 0 0 33.3333%;
-        max-width: 33.3333%; /* Exibe três fotos por linha */
+        max-width: 33.3333%; 
     }
 }
 
 @media (max-width: 576px) {
     #photo-library .col-md-3 {
         flex: 0 0 50%;
-        max-width: 50%; /* Exibe duas fotos por linha em telas menores */
+        max-width: 50%; 
     }
 }
 
@@ -204,6 +264,7 @@
     <div class="sidebar" id="sidebar">
         <a href="index.html" onclick="closeSidebar()">Voltar para o Início</a>
         <a href="#photo-library" onclick="showPhotoLibrary(); closeSidebar()">Biblioteca de Fotos</a>
+        <a href="#music-library" onclick="showMusicLibrary(); closeSidebar()">Playlist de Música</a>
         <a href="javascript:void(0);" onclick="closeSidebar()">Fechar</a>
     </div>
 
@@ -324,10 +385,47 @@
             <div class="col-md-3">
                 <img src="img/555.jpg" class="img-fluid" onclick="openModal(this.src)" alt="Café">
             </div>
-        </div>
-        <button class="btn btn-secondary mt-3" onclick="closePhotoLibrary()">Fechar</button>
+            <div class="col-md-3">
+                <img src="img/coriunga.jpg" class="img-fluid" onclick="openModal(this.src)" alt="Café">
+            </div>
+            <div class="col-md-3">
+                <img src="img/alana.jpg" class="img-fluid" onclick="openModal(this.src)" alt="Café">
+            </div>
+            <div class="col-md-3">
+                <img src="img/alana2.jpg" class="img-fluid" onclick="openModal(this.src)" alt="Café">
+            </div>
+            <div class="col-md-3">
+                <img src="img/diogo.jpg" class="img-fluid" onclick="openModal(this.src)" alt="Café">
+            </div>
+        </div class='text-center'>
+        <button class="btn btn-secondary mt-3 mx-auto d-block" onclick="closePhotoLibrary()">Fechar</button>
+
     </div>
 
+    <div id="music-library" class="container mt-5 music-library">
+        <h2 class="h2-text" style="text-align: center;">Playlist de Música</h2>
+        <div class="row">
+            <!-- Música 1 -->
+            <div class="col-md-3" style="margin-bottom: 15px;">
+                <img src="img/pavu.png" class="img-fluid" alt="Música 1">
+                <audio class="music-player" controls>
+                    <source src="Pavú Maraúna.mp3" type="audio/mp3">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </div>
+
+            <!-- Música 2 -->
+            <div class="col-md-3" style="margin-bottom: 15px;">
+                <img src="img/sentimento.png" class="img-fluid" alt="Música 2">
+                <audio class="music-player" controls>
+                    <source src="Sentimento Caprichoso.mp3" type="audio/mp3">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </div>
+
+        </div>
+        <button class="btn btn-secondary mt-3 mx-auto d-block" onclick="closeMusicLibrary()">Fechar</button>
+    </div>
     
     <div class="modal fade" id="photoModal" tabindex="-1" aria-labelledby="photoModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -404,6 +502,15 @@
             modalImage.src = src;
             const modal = new bootstrap.Modal(document.getElementById("photoModal"));
             modal.show();
+        }
+
+        function showMusicLibrary() {
+            document.getElementById("music-library").style.display = "block";
+            closeSidebar();
+        }
+
+        function closeMusicLibrary() {
+            document.getElementById("music-library").style.display = "none";
         }
     </script>
 </body>
